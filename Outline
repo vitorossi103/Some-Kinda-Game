@@ -1,0 +1,14 @@
+--------OUTLINE FOR NEW GAME--------
+* Uses Fire Emblem sprites as entity textures
+* Side-Scrolling
+    - levels
+    - minor platforming?
+* Entities
+    - Player
+        > can move up, down, left, and right
+        > can attack with range or melee
+        > possibly magic? Likely not
+        > health
+    - Enemies
+        > have "sight" range/visibility/agro range (won't go after player unless s/he enters this range)
+        >
