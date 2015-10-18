@@ -40,7 +40,7 @@ public class Player {
         }
 
         if (Mouse.isButtonDown(0)) {
-           //"attack". Will change texture
+           //"attack". Will change texture. Some kind of animation eventually.
         }
     }
 
