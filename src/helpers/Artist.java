@@ -21,8 +21,8 @@ public class Artist {
     }
 
     public static void drawTexture(Texture t, float x, float y, float width, float height) {
+        glEnable(GL_TEXTURE_2D);
         t.bind();
-
         glTranslatef(x, y, 0);
 
         glBegin(GL_QUADS);
@@ -42,29 +42,22 @@ public class Artist {
             glLoadIdentity();
         }
         glEnd();
+        glDisable(GL_TEXTURE_2D);
     }
 
     public static void drawBackground() {
+        glPushMatrix();
+
+        //draw sky
         glBegin(GL_QUADS);
         {
             glColor3d(0.7, 0.8, 0.9);
             glVertex2d(0, 0);
-            glVertex2d(640, 0);
+            glVertex2d(Game.SCREEN_WIDTH, 0);
 
             glColor3d(0.6, 0.7, 0.9);
-            glVertex2d(640, 480);
-            glVertex2d(0, 480);
-        }
-        glEnd();
-
-        // Draw ground
-        glBegin(GL_QUADS);
-        {
-            glColor3d(0.7, 0.3, 0.2);
-            glVertex2d(0, 0);
-            glVertex2d(640, 0);
-            glVertex2d(640, 32);
-            glVertex2d(0, 32);
+            glVertex2d(Game.SCREEN_WIDTH, Game.SCREEN_HEIGHT);
+            glVertex2d(0, Game.SCREEN_HEIGHT);
         }
         glEnd();
 
@@ -72,14 +65,15 @@ public class Artist {
         glBegin(GL_QUADS);
         {
             glColor3d(0.2, 0.8, 0.2);
-            glVertex2d(0, 25);
-            glVertex2d(640, 25);
+            glVertex2d(0, 0);
+            glVertex2d(Game.SCREEN_WIDTH, 0);
 
-            glVertex2d(640, 32);
-            glVertex2d(0, 32);
+            glVertex2d(Game.SCREEN_WIDTH, Game.SCREEN_HEIGHT / 2 - 32);
+            glVertex2d(0, Game.SCREEN_HEIGHT / 2 - 32);
         }
         glEnd();
-        glClearColor(0, 0, 0, 0);
+        glPopMatrix();
+        glColor3d(1, 1, 1);
     }
 }
 

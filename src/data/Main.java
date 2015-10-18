@@ -45,7 +45,6 @@ public class Main {
         glMatrixMode(GL_MODELVIEW);
         glDisable(GL_DEPTH_TEST);
         glClearColor(0, 0, 0, 0);
-        glEnable(GL_TEXTURE_2D);
     }
 
     private static void gameLoop() {
